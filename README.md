@@ -23,9 +23,29 @@ A simple REST API built with FastAPI + SQLAlchemy + Alembic + SQLite.
 ---
 
 ##  Setup Instructions
+#Create Virtual Environment
+python -m venv venv
 
-### 1. Clone the Repository
+# Install Dependencies
+pip install -r requirements.txt
 
-```bash
-git clone https://github.com/your-username/book-review-api.git
-cd book-review-api
+# Database Setup
+## Initialize Alembic
+
+alembic init alembic
+## Set alembic.ini
+sqlalchemy.url = sqlite:///./books.db
+
+# Generate Migrations
+alembic revision --autogenerate -m "Initial schema"
+
+
+# Running Tests
+Run the unit and integration tests:
+
+
+pytest tests/test_main.py -v
+#Run the API
+
+uvicorn app.main:app --reload
+
