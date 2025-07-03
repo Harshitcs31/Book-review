@@ -22,7 +22,7 @@ A simple REST API built with FastAPI + SQLAlchemy + Alembic + SQLite.
 
 ---
 
-## 🛠 Setup Instructions
+##  Setup Instructions
 
 ### 1. Clone the Repository
 
